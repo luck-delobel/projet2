@@ -39,7 +39,7 @@ st.set_page_config(page_title="Netflox", layout="wide")
 # CHARGEMENT DES COMPTES UTILISATEURS
 
 # On charge les comptes via un dataframe
-compte = pd.read_parquet("F:\projet2\identification")
+compte = pd.read_parquet("data/identification.parquet")
 
 # on creer un dictionnaire dans lequel on vient mettre les données du dataframe 
 credentials = {
