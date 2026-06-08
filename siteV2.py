@@ -384,7 +384,7 @@ if page == "Accueil" and sous_page == "Equipe":
     
     # on dit que dans la colonne 2 (qui represente une échelle de 4 sur 6) on mets l'image 
     with col2:
-        st.image("F:/projet2/Netflox.png")
+        st.image("image/Netflox.png")
     # espace entre l'image et la description
     st.space(size = "small")
 
@@ -432,7 +432,7 @@ if page == "Accueil" and sous_page == "Equipe":
     # on dit que dans la colonne 2 (qui represente une échelle de 4 sur 6) on mets l'image 
     with col2:
         # on affiche une image dans la page acceuille 
-        st.image("F:\projet2\Image1.png")
+        st.image("image/Image1.png")
 # fin de la page d'acceuille 
 
 
@@ -465,7 +465,7 @@ elif page == "Recommandation" and sous_page == "Films":
     # definition de data frame 
         #df = pd.read_csv("F:/projet2/recommandationfilmfinal.csv")
         # .parquet = .csv comprésser
-        df = pd.read_parquet("F:/projet2/recommandationfilmfinal.parquet")
+        df = pd.read_parquet("data/recommandationfilmfinal.parquet")
         return df
     # on vient recupérer le df loadé 
     df = load_data()
@@ -516,7 +516,7 @@ elif page == "Recommandation" and sous_page == "Films":
                     if image == "N/A" or image is None or image == 0 or requests.get(f"http://www.omdbapi.com/?apikey=ba1b6295&t={titre_encode}").status_code == 404 or infosDuFilm.get(request) == "False" or infosDuFilm.get(request) == "N/A":
                         st.write("Ton choix :")
                         # on affiche l'image de secours 
-                        st.image("F:/projet2/pasaffiche.png")
+                        st.image("image/pasaffiche.png")
                         st.write(choix)
 
                     else:
@@ -529,7 +529,7 @@ elif page == "Recommandation" and sous_page == "Films":
             # si pas d'affiche alors on affiche cette image  
             except:
                 with col2:
-                    st.image("F:/projet2/pasaffiche.png")
+                    st.image("image/pasaffiche.png")
 
 
 
@@ -589,7 +589,7 @@ elif page == "Recommandation" and sous_page == "Films":
                     # OMDB retourne "N/A" quand il n'y a pas de poster
                     if image == "N/A" or image is None or image == 0 or requests.get(f"http://www.omdbapi.com/?apikey=ba1b6295&t={titre_encode}").status_code == 404 or infosDuFilm.get(request) == "False" or infosDuFilm.get(request) == "N/A":
                         # on affiche l'image de secours 
-                        st.image("F:/projet2/pasaffiche.png")
+                        st.image("image/pasaffiche.png")
                     else :
                         # On affiche l'image en dessous
                         st.image(image)
@@ -598,7 +598,7 @@ elif page == "Recommandation" and sous_page == "Films":
 
                 except:
                     #si pas d'affiche on affiche :
-                    st.image("F:/projet2/pasaffiche.png")
+                    st.image("image/pasaffiche.png")
                     st.caption(cfilms)
     # si aucune selection choisit on creer des colonnes (3)
     else:
@@ -608,7 +608,7 @@ elif page == "Recommandation" and sous_page == "Films":
         with col2:
             st.badge("Vous n'avez choisit ni réalisateurs, ni films", color="red")
             st.space(size = "small")
-            st.image("F:/projet2/pasaffiche.png")
+            st.image("F:image/pasaffiche.png")
 
 
 
@@ -632,7 +632,7 @@ elif page == "Recommandation" and sous_page == "Séries":
     @st.cache_data
     def load_data():
     # definition de data frame 
-        df = pd.read_parquet("F:/projet2/recommandationsériesfinal.parquet")
+        df = pd.read_parquet("data/recommandationsériesfinal.parquet")
         return df
     df = load_data()
     # on definis la colonne titre du df dans la variable movie_name
@@ -681,7 +681,7 @@ elif page == "Recommandation" and sous_page == "Séries":
                     if image == "N/A" or image is None:
                         st.write("Ton choix :")
                         # on affiche l'image de secours 
-                        st.image("F:/projet2/pasaffiche.png")
+                        st.image("image/pasaffiche.png")
                         st.write(choix)
 
                     else :
@@ -693,7 +693,7 @@ elif page == "Recommandation" and sous_page == "Séries":
                         
             # si pas d'affiche alors on affiche cette image  
             except:
-                st.image("F:/projet2/pasaffiche.png")
+                st.image("image/pasaffiche.png")
 
     
         # si pas de films selectionné alors numero de la ligne = premier films du réalisateur 
@@ -748,7 +748,7 @@ elif page == "Recommandation" and sous_page == "Séries":
                     # OMDB retourne "N/A" quand il n'y a pas de poster
                     if image == "N/A" or image is None or image == 0 or requests.get(f"http://www.omdbapi.com/?apikey=ba1b6295&t={titre_encode}").status_code == 404 or infosDuFilm.get(request) == "False" or infosDuFilm.get(request) == "N/A":
                         # on affiche l'image de secours 
-                        st.image("F:/projet2/pasaffiche.png")
+                        st.image("image/pasaffiche.png")
                     else :
                         # On affiche l'image en dessous
                         st.image(image)
@@ -757,7 +757,7 @@ elif page == "Recommandation" and sous_page == "Séries":
 
                 except:
                     #si pas d'affiche on affiche :
-                    st.image("F:/projet2/pasaffiche.png")
+                    st.image("image/pasaffiche.png")
                     st.caption(cfilms)
 
     else:
@@ -766,7 +766,7 @@ elif page == "Recommandation" and sous_page == "Séries":
         with col2:
             st.badge("Vous n'avez choisit ni réalisateurs, ni films", color="red")
             st.space(size = "small")
-            st.image("F:/projet2/pasaffiche.png")
+            st.image("image/pasaffiche.png")
 
 
 
@@ -789,7 +789,7 @@ elif page == "Ma liste":
     # FONCTIONS DE GESTION DE LA LISTE
     
     # on définit le dossier où seront sauvegardées les listes de chaque utilisateur
-    LISTE_DIR = "F:/projet2/listes_utilisateurs/"
+    LISTE_DIR = "listes_utilisateurs/"
     # on crée le dossier s'il n'existe pas déjà (exist_ok=True évite une erreur si il existe)
     os.makedirs(LISTE_DIR, exist_ok=True)
 
@@ -965,28 +965,28 @@ elif page == "Statistiques" and sous_page == "Général":
     @st.cache_data
     def load_data():
     # definition de data frame 
-        df = pd.read_csv("F:/projet2/films/nombre_de_films_genre.csv")
+        df = pd.read_csv("data/nombre_de_films_genre.csv")
         return df
     df = load_data()
 
     @st.cache_data
     def load_data():
     # definition de data frame 
-        df = pd.read_csv("F:/projet2/films/note_par_type.csv")
+        df = pd.read_csv("data/note_par_type.csv")
         return df
     df2 = load_data()
 
     @st.cache_data
     def load_data():
     # definition de data frame 
-        df = pd.read_csv("F:/projet2/series/series_par_genres.csv")
+        df = pd.read_csv("data/series_par_genres.csv")
         return df
     df3 = load_data()
 
     @st.cache_data
     def load_data():
     # definition de data frame 
-        df = pd.read_csv("F:/projet2/series/notes_genres.csv")
+        df = pd.read_csv("data/notes_genres.csv")
         return df
     df4 = load_data()
     
@@ -1086,9 +1086,9 @@ elif page == "Données" and sous_page == "Films":
 
     # on import les graphiques 
     image = {
-        "genres" : "F:/projet2/films/Image13.png", 
-        "Fr" : "F:/projet2/films/Image14.png",
-        "note" : "F:/projet2/films/Image15.png"
+        "genres" : "image/Image13.png", 
+        "Fr" : "image/Image14.png",
+        "note" : "image/Image15.png"
     }
     
 
@@ -1136,13 +1136,13 @@ elif page == "Données" and sous_page == "Séries":
 
     # on import les graphiques 
     image = {
-        "genres" : "F:\projet2\series\Image6.png", 
-        "Fr" : "F:\projet2\series\Image7.png",
-        "note" : "F:\projet2\series\Image8.png"
+        "genres" : "image/Image6.png", 
+        "Fr" : "image/Image7.png",
+        "note" : "image/Image8.png"
     }
      # on import les graphiques pour la deuxieme ligne
     image2 = {
-        "catégorie" : "F:\projet2\series\Image9.png"
+        "catégorie" : "image/Image9.png"
     }
 
     # on ecrit la description des graphiques associés 
@@ -1207,13 +1207,13 @@ elif page == "Données" and sous_page == "Creuse":
     
     # on import les graphiques 
     image = {
-        "age" : "F:/projet2/creuse/age_creuse.png", 
-        "salaire" : "F:/projet2/creuse/salaire_creuse.png",
-        "tranche" : "F:/projet2/creuse/Image5.png"
+        "age" : "image/age_creuse.png", 
+        "salaire" : "image/salaire_creuse.png",
+        "tranche" : "image/Image5.png"
     }
     # on import les graphiques pour la deuxieme ligne
     image2 = {
-        "catégorie" : "F:\projet2\creuse\Image4.png", 
+        "catégorie" : "image/Image4.png", 
     }
     
     # on ecrit la description des graphiques associés 
