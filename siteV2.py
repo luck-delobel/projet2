@@ -556,7 +556,7 @@ elif page == "Recommandation" and sous_page == "Films":
         
         # on entraine la modèle mais Clustering, donc pas de y
         # joblib module permettant de scoket un algo ml dans un fichier pour le loads une seule fois 
-        nn = joblib.load("F:/projet2/site_projet2/recommandation.joblib") 
+        nn = nn.fit(X)
 
         # Ça sélectionne le vecteur de features du film choisi, qui sera ensuite comparé aux autres pour trouver les films du même cluster.
         # On récupère le profil du film choisi (ses genres, type, etc.)
