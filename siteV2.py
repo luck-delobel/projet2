@@ -608,7 +608,7 @@ elif page == "Recommandation" and sous_page == "Films":
         with col2:
             st.badge("Vous n'avez choisit ni réalisateurs, ni films", color="red")
             st.space(size = "small")
-            st.image("F:image/pasaffiche.png")
+            st.image("image/pasaffiche.png")
 
 
 
